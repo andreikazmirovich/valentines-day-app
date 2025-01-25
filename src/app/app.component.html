@@ -1,3 +1,18 @@
 <div class="app-wrapper">
-  <router-outlet />
+  <div class="app-content">
+    <div *ngIf="sheSaidYes" class="hearts" aria-hidden="true">
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+      <div class="heart">&#10084;</div>
+    </div>
+
+    <router-outlet />
+  </div>
 </div>
