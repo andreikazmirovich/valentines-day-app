@@ -1,35 +1,10 @@
 $pink-text: #ff8398;
 
 mat-card {
-  padding-bottom: 10px;
-
-  mat-card-header {
-    mat-card-title {
-      font-weight: 500;
-      color: $pink-text;
-    }
-
-    mat-card-subtitle {
-      color: $pink-text;
-      font-weight: 300;
-    }
-  }
-
-  mat-card-content {
-    padding: 30px 30px;
-    img.please {
-      width: 100%;
-    }
-  }
-
   mat-card-actions {
-    button {
-      font-size: 15px;
-
-      &.yes {
-        background-color: #ffd6dd;
-        color: $pink-text;
-      }
+    button.yes {
+      background-color: #ffd6dd;
+      color: $pink-text;
     }
   }
 }

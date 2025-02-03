@@ -1,0 +1,12 @@
+<app-heart-card (onFlipped)="onFlipped($event)"></app-heart-card>
+
+<div class="click-wrapper">
+  <div *ngIf="showILoveYouMessage" class="i-love-you-message">Дякую що ти зі мною! Я тебе дуже сильно люблю і ціную!</div>
+
+  <ng-container *ngIf="!showILoveYouMessage">
+    <img class="arrow" src="/arrow.png">
+    <div class="click-text">Натисни</div>
+  </ng-container>
+</div>
+
+<div class="dark-bg" [ngClass]="isCardFlipped ? 'active' : 'inactive'"></div>

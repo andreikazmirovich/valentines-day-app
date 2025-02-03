@@ -1,0 +1,26 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Може хочеш в кіно зходити?</mat-card-title>
+    <mat-card-subtitle>Не знаю правда шо там зараз показують, так що це не обов'язково 😬</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <img class="full-card-image" [src]="wantMovie !== false ? '/movie.gif' : '/movie-home.gif'">
+    <mat-radio-group [(ngModel)]="wantMovie">
+      <mat-radio-button [value]="true">Хочу</mat-radio-button>
+      <mat-radio-button [value]="false">Давай іншим разом</mat-radio-button>
+    </mat-radio-group>
+
+    <div *ngIf="wantMovie === false">
+      Можем тоді якусь кіношку вдома подивитись 😙
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="wantMovie !== undefined"
+      mat-raised-button
+      class="yes"
+      routerLink="/sex"
+      (click)="next()">
+      Натисни сюда ❤
+    </button>
+  </mat-card-actions>
+</mat-card>

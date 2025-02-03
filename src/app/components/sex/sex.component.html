@@ -1,0 +1,21 @@
+<mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>А потім шпілі-вілі 😏?</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img class="full-card-image" src="/moto-moto.gif">
+      <mat-radio-group [(ngModel)]="wantSex">
+        <mat-radio-button [value]="true">Оу єссс! 👩‍❤️‍💋‍👨</mat-radio-button>
+        <mat-radio-button [value]="false">Ой нє, мене голова болить...</mat-radio-button>
+      </mat-radio-group>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="wantSex !== undefined"
+        mat-raised-button
+        class="yes"
+        routerLink="/thank-you-for-being-my-girlfriend"
+        (click)="next()">
+        Натисни сюда ❤
+      </button>
+    </mat-card-actions>
+  </mat-card>

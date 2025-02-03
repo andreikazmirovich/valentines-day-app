@@ -4,10 +4,10 @@
     <mat-card-subtitle>Я був би дуже радий 😘</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <img class="please" src="/please.webp">
+    <img class="full-card-image" src="/please.gif">
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button class="yes" (click)="onYesClick()">Канєшно стану ❤</button>
-    <button mat-raised-button>Не стану! Я тебе вопшє не люблю 💀</button>
+    <button mat-raised-button class="yes" (click)="next()" routerLink="/thank-you">Канєшно стану ❤</button>
+    <button mat-raised-button (click)="showSnackbar()">Не стану! Я тебе вопшє не люблю 💀</button>
   </mat-card-actions>
 </mat-card>

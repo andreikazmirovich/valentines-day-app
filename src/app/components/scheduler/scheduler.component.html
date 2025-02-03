@@ -1,0 +1,53 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ stepsHeaders[stepper.selectedIndex] }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-stepper linear #stepper [formGroup]="form">
+      <mat-step [stepControl]="form" label="📅" [editable]="false">
+        <div class="date-picker">
+          <mat-form-field>
+            <mat-label>Вибери дату</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button *ngIf="!dateSelected" mat-raised-button (click)="picker.open()">Клацни сюда -> 📅</button>
+
+          <div class="back-next-buttons">
+            <button [disabled]="!dateSelected" mat-raised-button matStepperNext>⏩</button>
+          </div>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="form" label="🍲" [editable]="true">
+        <!-- Food picker -->
+        <div class="picker">
+          <div *ngFor="let f of food" class="picker-option-wrapper"
+            [ngClass]="f.selected ? 'selected' : ''"
+            (click)="f.selected = !f.selected">
+            <img class="image" [src]="'/' + f.imgName">
+            <div class="description">{{ f.description }}</div>
+          </div>
+        </div>
+
+        <div class="back-next-buttons">
+          <button [disabled]="!isAnyItemSelected(food)" mat-raised-button matStepperNext>⏩</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="form" label="🧁" [editable]="false">
+        <!-- Dessert picker -->
+        <div class="picker">
+          <div *ngFor="let d of desserts" class="picker-option-wrapper"
+            [ngClass]="d.selected ? 'selected' : ''"
+            (click)="d.selected = !d.selected">
+            <img class="image" [src]="'/' + d.imgName">
+            <div class="description">{{ d.description }}</div>
+          </div>
+        </div>
+
+        <div class="back-next-buttons">
+          <button [disabled]="!isAnyItemSelected(desserts)" mat-raised-button (click)="next()" routerLink="/movie">Готово</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </mat-card-content>
+</mat-card>
