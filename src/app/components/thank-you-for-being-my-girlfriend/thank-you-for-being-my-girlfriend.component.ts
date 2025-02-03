@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeartCardComponent } from '../heart-card/heart-card.component';
 import { DataService } from '../../services/data.service';
 import { CommonModule } from '@angular/common';
+import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'app-thank-you-for-being-my-girlfriend',
@@ -16,10 +17,13 @@ export class ThankYouForBeingMyGirlfriendComponent implements OnInit {
   isCardFlipped = false;
   showILoveYouMessage = false
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private emailService: EmailService
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.dataService.result);
+    this.emailService.send(this.dataService.result);
   }
 
   onFlipped(isCardFlipped: boolean): void {
