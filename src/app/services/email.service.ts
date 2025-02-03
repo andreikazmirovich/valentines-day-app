@@ -8,7 +8,7 @@ import { Result } from '../interfaces/result.interface';
 export class EmailService {
   send(object: Result): void {
     const templateParams = {
-      date: object.date,
+      date: new Date(object.date as string).toLocaleDateString(),
       food: object.food?.length ? object?.food.join(', ') : 'нічого',
       desserts: object.desserts?.length ? object?.desserts.join(', ') : 'нічого',
       movie: object.movie ? 'Так' : 'Ні',
