@@ -11,7 +11,7 @@
             <input formControlName="date" matInput [matDatepicker]="picker">
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          <button *ngIf="!dateSelected" mat-raised-button (click)="picker.open()">Клацни сюда -> 📅</button>
+          <button *ngIf="!dateSelected" mat-raised-button (click)="picker.open()">Вибрати дату -> 📅</button>
 
           <div class="back-next-buttons">
             <button [disabled]="!dateSelected" mat-raised-button matStepperNext>⏩</button>
